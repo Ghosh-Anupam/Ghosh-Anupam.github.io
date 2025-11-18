@@ -61,7 +61,7 @@
     h6 { font-size: 1.25em; font-weight: bold; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     h7 { font-size: 1em; font-weight: normal; font-style: italic; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     h8 { font-size: 1.25em; font-weight: normal; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
-    h9 { font-size: 1.25em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h9 { font-size: 1em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     /* Reduce gap between h3 and following h4 */
     h3 + h4 {
       margin-top: 5px;  /* Was 15px—now tighter */
@@ -105,6 +105,7 @@
     .education-institution { margin-top: 0; /* Remove italic */ }
     .teaching-entry {
       margin-bottom: 20px;
+      font-size: 1em; /* Set consistent font size for teaching entries */
     }
     .teaching-header {
       display: flex;
@@ -132,9 +133,9 @@
     strong { font-weight: bold; }
     .skills ul { padding-left: 0; list-style-type: none; }
     .skills li { text-indent: 0; margin-bottom: 5px; }
-    .award-entry { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .award-entry { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1em; /* Set consistent font size for award entries */ }
     .award-name { flex: 1; font-weight: bold; }
-    .award-date { text-align: right; white-space: nowrap; font-size: 1.25em; color: var(--text-color); font-weight: bold; }
+    .award-date { text-align: right; white-space: nowrap; font-size: 1em; color: var(--text-color); font-weight: bold; }
     .references-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* 3 columns */
@@ -251,54 +252,71 @@
     </ul>
     <hr class="subsection">
     <h3>Presentations</h3>
-    <ul>
-      <li>Midwest Applied Microeconomics Workshop, University of Missouri, 2025</li>
-      <li>Half Baked Seminar, University of Nebraska-Lincoln, 2024</li>
-      <li>Economics Departmental Seminar, University of Arkansas-Fayetteville, 2019</li>
-    </ul>
+    <div class="award-entry">
+      <div class="award-name"><strong>Midwest Applied Microeconomics Workshop</strong>, <i>University of Missouri</i></div>
+      <div class="award-date"><strong>2025</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Half Baked Seminar</strong>, <i>University of Nebraska-Lincoln</i></div>
+      <div class="award-date"><strong>2024</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Economics Departmental Seminar</strong>, <i>University of Arkansas-Fayetteville</i></div>
+      <div class="award-date"><strong>2019</strong></div>
+    </div>
     <hr class="subsection">
     <h3>Conferences & Workshops</h3>
-    <ul>
-      <li>Causal Inference Workshop, Arnold Ventures, 2025</li>
-      <li>Nebraska-Labor Summit, University of Nebraska-Lincoln, 2022-2024</li>
-      <li>Ganga Padma Devising Seminar, Observer Research Foundation, 2017</li>
-      <li>Sustainable Development in Sunderban, Observer Research Foundation, 2016</li>
-    </ul>
+    <div class="award-entry">
+      <div class="award-name"><strong>Causal Inference Workshop</strong>, <i>Arnold Ventures</i></div>
+      <div class="award-date"><strong>2025</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Nebraska Labor Summit</strong>, <i>University of Nebraska-Lincoln</i></div>
+      <div class="award-date"><strong>2022-2024</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Ganga Padma Devising Seminar</strong>, <i>Observer Research Foundation</i></div>
+      <div class="award-date"><strong>2017</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Sustainable Development in Sunderban</strong>, <i>Observer Research Foundation</i></div>
+      <div class="award-date"><strong>2016</strong></div>
+    </div>
     <hr class="subsection">
   </section>
 <section id="teaching">
     <div class="teaching-entry">
       <div class="teaching-header">
-        <span>University of Nebraska-Lincoln</span>
+        <span>Instructor of Record</span>
         <span>2022 - 2024</span>
       </div>
-      <div class="teaching-role">Instructor of Record</div>
+      <div class="teaching-role">University of Nebraska-Lincoln</div>
       <div class="teaching-course">Principles of Macroeconomics</div>
       <div class="teaching-evaluations">Evaluations: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-211-Summer%202022.pdf" download>Summer 2022</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-211-Fall%202022.pdf" download>Fall 2022</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-211-Summer%202023.pdf" download>Summer 2023</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-211-Fall%202023.pdf" download>Fall 2023</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-211-Spring%202024.pdf" download>Spring 2024</a> </div>
     </div>
     <div class="teaching-entry">
       <div class="teaching-header">
-        <span>University of Nebraska-Lincoln</span>
+        <span>Teaching Assistant</span>
         <span>2020-2021</span>
       </div>
-      <div class="teaching-role">Teaching Assistant</div>
+      <div class="teaching-role">University of Nebraska-Lincoln</div>
       <div class="teaching-course">Principles of Microeconomics & Intermediate Microeconomics</div>
     </div>
     <div class="teaching-entry">
       <div class="teaching-header">
-        <span>University of Arkansas-Fayetteville</span>
+        <span>Instructor of Record</span>
         <span>2019 - 2020</span>
       </div>
-      <div class="teaching-role">Instructor of Record</div>
+      <div class="teaching-role">University of Arkansas-Fayetteville</div>
       <div class="teaching-course">Essentials of Economics</div>
       <div class="teaching-evaluations">Evaluations: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-2143-Fall-2019.pdf" download>Fall 2019</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/ECON-2143-Spring-2020.pdf" download>Spring 2020</a></div>
     </div>
     <div class="teaching-entry">
       <div class="teaching-header">
-        <span>Asutosh College, Kolkata, India</span>
+        <span>Guest Lecturer</span>
         <span>2016 - 2017</span>
       </div>
-      <div class="teaching-role">Guest Lecturer</div>
+      <div class="teaching-role"></div>
       <div class="teaching-course">Micro and Macro Economics, Statistics, & Indian Economic History</div>
     </div>
   </section>
