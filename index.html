@@ -28,7 +28,7 @@
       --link-color: #2b6cb0;
       --highlight-color: #480607 ;
     }
-    body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 20px; line-height: 0; color: var(--text-color); 
+    body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 20px; line-height: 1.6; color: var(--text-color); 
       font-size: 1.25em; background-color: var(--bg-color); transition: all 0.3s ease; }
 header { 
   display: flex; 
@@ -36,7 +36,7 @@ header {
   align-items: center; 
   color: var(--nav-text); 
   padding: 10px 20px; 
-  margin-bottom: 20px; 
+  margin-bottom: 10px; 
   position: relative; 
   z-index: 1; 
   margin-top: -20px;
@@ -58,7 +58,7 @@ header::before {
     nav a:hover { text-decoration: underline; }
     .toggle-btn { background: none; border: none; font-size: 1.5em; cursor: pointer; color: orange; }
     img {
-          border-radius: 0; /* Change from 50% to 0 for square; or use 8px for subtle rounding */
+          border-radius: 8px; /* Change from 50% to 0 for square; or use 8px for subtle rounding */
             /* Remove fixed width/height here if present */
         }
 .profile-pic-wrapper {
