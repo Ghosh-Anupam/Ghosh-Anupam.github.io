@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN -->
   <style>
     :root {
-      --bg-color: #3B444B; /* Dark gray bg  */
+      --bg-color: #16191b; /* Dark gray bg  */
       --text-color: #FFFFF0	; /* White text  */
-      --nav-bg: #4a5568; /* Silver nav  */
+      --nav-bg: #16191b; /* Silver nav  */
       --nav-text: #FFFFF0	; /* White nav text on navy for contrast */
-      --header-border: #4a5568;
-      --section-bg: #4a5568;
+      --header-border: #16191b;
+      --section-bg: #16191b;
       --highlight-bg: #63b3ed; /* Blue for Job Market Paper highlight */
       --link-color: #4299e1;
       --highlight-color: #F7E7CE ;
@@ -23,9 +23,9 @@
       --nav-bg: #002147; /* Navy nav light */
       --nav-text: #FFFFF0	; /* White nav text on navy for contrast */
       --header-border: #002147;
-      --section-bg: #FFFFFF;
-      --highlight-bg: #FFFFFF;
-      --link-color: #2b6cb0;
+      --section-bg: #FFFFF0;
+      --highlight-bg: #FFFFF0;
+      --link-color: #014083;
       --highlight-color: #480607 ;
     }
     body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 20px; line-height: 1.6; color: var(--text-color); 
@@ -63,7 +63,7 @@ header::before {
         }
 .profile-pic-wrapper {
   width: 350px;               /* Fixed width to fit inside the flex grid */
-  height: 450px;              /* 5:6 portrait ratio (common for academic headshots) */
+  height: 500px;              /* 5:6 portrait ratio (common for academic headshots) */
   overflow: hidden;           /* Crop any overflow */
   margin: 0 auto;             /* Center within .bio-left */
   border: 0px solid var(--header-border);
@@ -103,7 +103,7 @@ header::before {
     li { margin-bottom: 10px; text-indent: 0; font-size: 1.1.25em; }
     a { color: var(--link-color); text-decoration: none; font-size: 1.1.25em; }
     a:hover { text-decoration: underline; }
-    .abs-intro { font-style: normal; margin: 0px 0; background: var(--section-bg); padding: 0px; border-radius: 0px; color: var(--highlight-color); margin-left: 0px; font-size: 1.25em; }
+    .abs-intro { font-style: normal; margin: 0px 0; background: var(--section-bg); padding: 0px; border-radius: 0px; color: var(--highlight-color); margin-left: 0px; font-size: 1.15em; }
     .abstract { font-style: italic; margin: 10px 0; background: var(--section-bg); padding: 10px; border-radius: 5px; color: var(--text-color); margin-left: 20px; font-size: 1.25em; }
     .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.25em; }
     .pdf-link { background: var(--section-bg); padding: 5px 10px; border-radius: 5px; display: inline-block; margin: 5px; color: var(--text-color); margin-left: 20px; }
