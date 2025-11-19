@@ -36,7 +36,7 @@ header {
   align-items: center; 
   color: var(--nav-text); 
   padding: 10px 20px; 
-  margin-bottom: 10px; 
+  margin-bottom: 0; 
   position: relative; 
   z-index: 1; 
   margin-top: -20px;
@@ -62,8 +62,8 @@ header::before {
             /* Remove fixed width/height here if present */
         }
 .profile-pic-wrapper {
-  width: 400px;               /* Fixed width to fit inside the flex grid */
-  height: 600px;              /* 5:6 portrait ratio (common for academic headshots) */
+  width: 300px;               /* Fixed width to fit inside the flex grid */
+  height: 500px;              /* 5:6 portrait ratio (common for academic headshots) */
   overflow: hidden;           /* Crop any overflow */
   margin: 0 auto;             /* Center within .bio-left */
   border: 0px solid var(--header-border);
@@ -157,7 +157,7 @@ header::before {
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--section-bg); word-wrap: break-word; }
     th { background: var(--section-bg); }
-    section { margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--header-border); display: none; }
+    section { margin-top: 10px; padding-top: 10px; border-top: none; display: none; }
     section.active { display: block; }
     hr.subsection { border: 0; height: 1px; background-color: #ccc; margin-top: 10px; margin-bottom: 20px; } /* Moderated subsection line: Reduced height from 0.3em to 1px for thinner appearance; Changed color from var(--text-color) (which could be dark/white based on theme) to #ccc (light gray) for subtler, less prominent divider in both light/dark modes */
     .indented { margin-left: 20px; }
