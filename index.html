@@ -30,8 +30,8 @@
     }
     body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 20px; line-height: 1.6; color: var(--text-color); 
       font-size: 1.25em; background-color: var(--bg-color); transition: all 0.3s ease; }
-    header { text-align: center; border-bottom: 2px solid var(--header-border); padding-bottom: 20px; margin-bottom: 20px; background-color: var(--bg-color); color: var(--text-color); } 
-    nav { background: var(--nav-bg); padding: 10px; text-align: center; margin-bottom: 20px; font-size: 1.25em; border-radius: 5px; position: relative; }
+    header { display: flex; justify-content: space-between; align-items: center; background: var(--nav-bg); color: var(--nav-text); padding: 10px 20px; margin-bottom: 20px; border-bottom: 2px solid var(--header-border); }
+    nav { background: none; padding: 0; text-align: right; margin-bottom: 0; font-size: 1.25em; border-radius: 0; position: relative; }
     nav a { margin: 0 15px; color: var(--nav-text); text-decoration: none; font-weight: bold; } 
     nav a:hover { text-decoration: underline; }
     .toggle-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5em; cursor: pointer; color: var(--nav-text); }
@@ -53,7 +53,7 @@
   object-fit: cover;          /* Fill the box, cropping evenly */
   object-position: center;
 }
-    h1 { font-size: 5em; margin: 10px 0; color: var(--text-color); font-weight: bold; text-align: center; } 
+    h1 { font-size: 5em; margin: 0; color: var(--nav-text); font-weight: bold; text-align: left; } 
     h2 { font-size: 3em; color: var(--text-color); border-bottom: 1px solid var(--section-bg); padding-bottom: 5px; margin-top: 20px; text-align: center; margin-bottom: 20px; }
     h3 { font-size: 2em; color: var(--text-color); margin-top: 20px; text-align: left; }
     h4 { font-size: 1.5em; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
@@ -168,11 +168,11 @@
 <body data-theme="light"> 
   <header>
     <h1>Anupam Ghosh</h1>
-  </header>
-  <nav>
+    <nav>
     <a href="#home">Home</a> | <a href="#research">Research</a> | <a href="#teaching">Teaching</a> | <a href="#awards">Awards</a> | <a href="#contact">Contact</a>
     <button class="toggle-btn" onclick="toggleTheme()">☀️</button>
   </nav>
+  </header>
   <section id="home" class="active">
     <div class="biography">
       <div class="bio-left">
