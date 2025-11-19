@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anupam Ghosh</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN -->
   <style>
@@ -30,11 +30,11 @@
     }
     body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 20px; line-height: 1.6; color: var(--text-color); 
       font-size: 1.25em; background-color: var(--bg-color); transition: all 0.3s ease; }
-    header { text-align: center; border-bottom: 2px solid var(--header-border); padding-bottom: 20px; margin-bottom: 20px; background-color: var(--bg-color); color: var(--text-color); } 
-    nav { background: var(--nav-bg); padding: 10px; text-align: center; margin-bottom: 20px; font-size: 1.25em; border-radius: 5px; position: relative; }
+    header { text-align: left; padding: 10px; margin-bottom: 20px; background-color: var(--nav-bg); color: var(--nav-text); display: flex; justify-content: space-between; align-items: center; } 
+    nav { padding: 0; text-align: left; font-size: 1.25em; position: relative; display: inline-block; }
     nav a { margin: 0 15px; color: var(--nav-text); text-decoration: none; font-weight: bold; } 
     nav a:hover { text-decoration: underline; }
-    .toggle-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5em; cursor: pointer; color: var(--nav-text); }
+    .toggle-btn { background: none; border: none; font-size: 1.5em; cursor: pointer; color: var(--nav-text); margin-left: 15px; }
     img {
           border-radius: 0; /* Change from 50% to 0 for square; or use 8px for subtle rounding */
             /* Remove fixed width/height here if present */
@@ -53,7 +53,7 @@
   object-fit: cover;          /* Fill the box, cropping evenly */
   object-position: center;
 }
-    h1 { font-size: 5em; margin: 10px 0; color: var(--text-color); font-weight: bold; text-align: center; } 
+    h1 { font-size: 5em; margin: 10px 0; color: var(--nav-text); font-weight: bold; text-align: left; } 
     h2 { font-size: 3em; color: var(--text-color); border-bottom: 1px solid var(--section-bg); padding-bottom: 5px; margin-top: 20px; text-align: center; margin-bottom: 20px; }
     h3 { font-size: 2em; color: var(--text-color); margin-top: 20px; text-align: left; }
     h4 { font-size: 1.5em; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
@@ -168,11 +168,12 @@
 <body data-theme="light"> 
   <header>
     <h1>Anupam Ghosh</h1>
-  </header>
-  <nav>
+    <nav>
     <a href="#home">Home</a> | <a href="#research">Research</a> | <a href="#teaching">Teaching</a> | <a href="#awards">Awards</a> | <a href="#contact">Contact</a>
     <button class="toggle-btn" onclick="toggleTheme()">☀️</button>
   </nav>
+  </header>
+  
   <section id="home" class="active">
     <div class="biography">
       <div class="bio-left">
@@ -188,7 +189,23 @@
       </div>
       <div class="bio-right">
         <div class="passage">
-          <p>Anupam Ghosh is a PhD Candidate in Economics at the University of Nebraska-Lincoln. His primary research interests are labor, public, and economics of crime, with secondary fields in environmental and health economics. His job market paper examines the short and long-term effects of hurricanes on crime in US counties, finding major hurricanes increase property crimes by 8.5% over a decade, imposing $120 per capita social costs, driven by out-migration and falling incomes.</p>
+          <p> 
+            <strong>Welcome!</strong> I am a sixth year PhD candidate in Economics at the University of Nebraska-Lincoln. My research utilizes applied econometric technqiues, to answer questions in areas of labor, public and environmental economics.
+        </p>
+        <p>
+            <strong>
+            I am on the 2025-2026 job market, seeking positions across academia and the private sector, starting in Summer 2026.
+            </strong>
+        </p>
+        <p>
+            My job market paper, presents <strong>novel estimates</strong> of the short- (1-4 years after exposure) and long-term (5-10 years after exposure) effects of hurricanes on county-level crime rates.
+            Using a multiple event study specification, I show that analyzing effects varying by hurricane intensity, leads me to uncover effects lasting at least a decade following exposure, which is substantially longer than anything reported in the existing literature.
+        </p>
+        
+        <p>
+            Besides academia, I love travelling, photography, and exploring new cuisines.
+        </p>
+
           <p>Download My: <a href="#research" class="pdf-link"><h8>Job Market Paper</h8></a> | <a href="Academic_CV.pdf" class="pdf-link" download><h8>Academic CV</h8></a> | <a href="Industry_Resume.pdf" class="pdf-link" download><h8>Industry Resume</h8></a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Sample_Syllabus.pdf" class="pdf-link" download><h8>Teaching Syllabus</h8></a></p>
         </div>
         <div class="interests-education">
