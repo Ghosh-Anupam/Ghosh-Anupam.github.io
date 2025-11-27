@@ -5,234 +5,227 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anupam Ghosh</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CDN -->
+  <style>
     :root {
-      --bg-color: #16191b;
-      --text-color: #FFFFF0;
-      --nav-bg: #16191b;
-      --nav-text: #FFFFF0;
+      --bg-color: #16191b; /* Dark gray bg  */
+      --text-color: #FFFFF0 ; /* White text  */
+      --nav-bg: #16191b; /* Silver nav  */
+      --nav-text: #FFFFF0 ; /* White nav text on navy for contrast */
       --header-border: #16191b;
       --section-bg: #16191b;
-      --highlight-bg: #63b3ed;
+      --highlight-bg: #63b3ed; /* Blue for Job Market Paper highlight */
       --link-color: #4299e1;
-      --highlight-color: #F7E7CE;
-      --font-main: 'Garamond', 'Georgia', serif;
-      --font-header: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --highlight-color: #F7E7CE ;
     }
-    
     [data-theme="light"] {
-      --bg-color: #FFFFF0; /* Ivory/White background */
-      --text-color: #3B444B; /* Dark Charcoal text for readability */
-      --nav-bg: #002147; /* Navy Blue header */
-      --nav-text: #FFFFF0;
+      --bg-color:   #FFFFF0 ; /* White bg light */
+      --text-color: #3B444B;
+      --nav-bg: #002147; /* Navy nav light */
+      --nav-text: #FFFFF0 ; /* White nav text on navy for contrast */
       --header-border: #002147;
       --section-bg: #FFFFF0;
       --highlight-bg: #FFFFF0;
-      --link-color: #014083; /* Deep Blue links */
-      --highlight-color: #480607;
+      --link-color: #014083;
+      --highlight-color: #480607 ;
     }
-
-    /* --- GLOBAL LAYOUT & TYPOGRAPHY --- */
-    body { 
-      font-family: var(--font-main); 
-      /* Max-width 1000px matches the academic reference site for better reading flow */
-      max-width: 1000px; 
-      margin: 0 auto; 
-      padding: 0 40px; 
-      line-height: 1.6; 
-      color: var(--text-color); 
-      font-size: 1.25rem; /* Approx 20px */
-      background-color: var(--bg-color); 
-      transition: all 0.3s ease; 
-      overflow-x: hidden; /* Prevents horizontal scroll from header hack */
+    body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 5px; line-height: 1.6; color: var(--text-color);
+      font-size: 1.25rem; background-color: var(--bg-color); transition: all 0.3s ease; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--nav-text);
+  padding: 10px 20px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 100%;
+  background: var(--nav-bg);
+  z-index: -1;
+}
+    nav { background: none; padding: 0; text-align: right; margin-bottom: 0; font-size: 1.25rem; border-radius: 0; position: relative; }
+    nav a { margin: 0 15px; color: var(--nav-text); text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .toggle-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: orange; }
+    img {
+          border-radius: 8px; /* Change from 50% to 0 for square; or use 8px for subtle rounding */
+            /* Remove fixed width/height here if present */
+        }
+.profile-pic-wrapper {
+  width: 350px;               /* Fixed width to fit inside the flex grid */
+  height: 500px;              /* 5:6 portrait ratio (common for academic headshots) */
+  overflow: hidden;           /* Crop any overflow */
+  margin: 0 auto;             /* Center within .bio-left */
+  border: 0px solid var(--header-border);
+  align-self: flex-start;     /* Keep it at the top of the flex column */
+}
+.profile-pic-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* Fill the box, cropping evenly */
+  object-position: center;
+}
+    h1 { font-size: 3rem; margin: 0; color: var(--nav-text); font-weight: bold; text-align: left; }
+    h2 { font-size: 3rem; color: var(--text-color); border-bottom: 1px solid var(--section-bg); padding-bottom: 5px; margin-top: 20px; text-align: center; margin-bottom: 20px; }
+    h3 { font-size: 2rem; color: var(--text-color); margin-top: 20px; text-align: left; }
+    h4 { font-size: 1.5rem; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
+    h5 { font-size: 1.25rem; font-weight: normal; color: var(--text-color); margin-top: 15px; text-align: left; margin-bottom: 5px; margin-left: 20px; }
+    h6 { font-size: 1.25rem; font-weight: bold; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h7 { font-size: 1.15rem; font-weight: normal; font-style: italic; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h8 { font-size: 1.15rem; font-weight: normal; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h9 { font-size: 1.15rem; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    h10 { font-size: 1.25rem; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
+    /* Reduce gap between h3 and following h4 */
+    h3 + h4 {
+      margin-top: 5px;  /* Was 15px—now tighter */
     }
-
-    /* --- RESPONSIVE FONT SIZING --- */
-    h1 { font-size: 2.5rem; margin: 0; color: var(--nav-text); font-weight: bold; text-align: left; font-family: var(--font-main); } 
-    h2 { font-size: 2rem; color: var(--text-color); border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 40px; text-align: center; margin-bottom: 30px; }
-    h3 { font-size: 1.5rem; color: var(--text-color); margin-top: 30px; margin-bottom: 10px; text-align: left; font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 5px;}
-    h4 { font-size: 1.3rem; color: var(--text-color); margin-top: 20px; text-align: left; margin-bottom: 5px; font-weight: bold; }
-    
-    /* Helper classes for the custom tags used previously */
-    .subtitle { font-size: 1.1rem; font-weight: normal; margin-left: 20px; display: block; }
-    .bold-underline { font-weight: bold; text-decoration: underline; }
-    
-    /* --- HEADER (Preserved Layout) --- */
-    header { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      color: var(--nav-text); 
-      padding: 20px 0; /* Padding inside the content area */
-      margin-bottom: 40px; 
-      position: relative; 
-      z-index: 1; 
+    h3 {
+      margin-bottom: 5px;  /* Reduce bottom margin of h3 for even closer spacing */
     }
-    
-    /* The "Full Width Blue Bar" Hack */
-    header::before { 
-      content: ''; 
-      position: absolute; 
-      top: 0; 
-      left: 50%; 
-      transform: translateX(-50%);
-      width: 100vw; 
-      height: 100%; 
-      background: var(--nav-bg); 
-      z-index: -1; 
+    /* Reduce gap between Skills h3 and ul list */
+    .skills h3 {
+      margin-bottom: 0;  /* Eliminate bottom margin */
     }
-
-    nav { background: none; padding: 0; text-align: right; }
-    nav a { margin-left: 20px; color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 1.1rem; } 
-    nav a:hover { text-decoration: underline; color: #cbd5e0; }
-    
-    .toggle-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: orange; margin-left: 10px;}
-
-    /* --- BIO SECTION --- */
-    .biography { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 40px; }
-    .bio-left { flex: 0 0 300px; text-align: center; } /* Fixed width for image column */
-    .bio-right { flex: 1; }
-
-    .profile-pic-wrapper {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 5/6;
-      overflow: hidden;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .profile-pic-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-    
-    .social-icons a { margin: 0 8px; font-size: 1.8rem; color: var(--link-color); transition: color 0.2s;}
-    .social-icons a:hover { color: var(--text-color); }
-
-    /* --- GENERAL ELEMENTS --- */
-    p { margin-bottom: 15px; }
-    a { color: var(--link-color); text-decoration: none; }
+    .skills ul {
+      margin-top: 0;  /* Eliminate top margin */
+    }    p {
+  margin:2px;
+  padding:2px;
+  }
+  div{
+  margin:2px;
+  padding:2px;
+  }
+    ul { list-style-type: disc; padding-left: 40px; color: var(--text-color); margin-top: 5px; font-size: 1.25rem; }
+    li { margin-bottom: 10px; text-indent: 0; font-size: 1.25rem; }
+    a { color: var(--link-color); text-decoration: none; font-size: 1.25rem; }
     a:hover { text-decoration: underline; }
-    
-    ul { margin-top: 5px; padding-left: 20px; }
-    li { margin-bottom: 8px; }
-
-    .highlight-box { background: var(--section-bg); padding: 15px; border-left: 4px solid var(--link-color); margin: 20px 0; font-style: italic; }
-    
-    .pdf-link { 
-        display: inline-block; 
-        font-size: 0.95rem; 
-        font-weight: bold;
-        margin-right: 15px;
-    }
-    
-    /* --- TEACHING SECTION (COMPACT FIX) --- */
+    .abs-intro { font-style: normal; margin: 0px 0; background: var(--section-bg); padding: 0px; border-radius: 0px; color: var(--highlight-color); margin-left: 0px; font-size: 1.15rem; }
+    .abstract { font-style: italic; margin: 10px 0; background: var(--section-bg); padding: 10px; border-radius: 5px; color: var(--text-color); margin-left: 20px; font-size: 1.25rem; }
+    .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.25rem; }
+    .pdf-link { background: var(--section-bg); padding: 5px 10px; border-radius: 5px; display: inline-block; margin: 5px; color: var(--text-color); margin-left: 20px; }
+    footer { text-align: center; margin-top: 50px; font-size: 0.8rem; color: var(--text-color); border-top: 1px solid var(--section-bg); padding-top: 20px; }
+    section { margin-top: 0; padding-top: 0; border-top: none; display: none; }
+    .biography { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 20px; margin-top: 0; }
+    .bio-left { text-align: center; }
+    .bio-right { text-align: left; flex: 3; }
+    .passage { margin-bottom: 20px; font-size: 1.25rem; }
+    .interests-education { display: flex; gap: 40px; }
+    .education { flex-basis: 50%; }
+    .skills { flex-basis: 50%; }
+    .education ul, .skills ul { list-style-type: none; padding-left: 0; }
+    .education li, .skills li { margin-bottom: 10px; }
+    .social-icons { margin-top: 10px; }
+    .social-icons a { margin: 0 5px; font-size: 3rem; color: var(--link-color); }
+    .social-icons a:hover { color: var(--text-color); }
+    .education-entry { margin-bottom: 15px; font-size: 1.25rem; }
+    .education-degree { font-weight: bold; margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; }
+    .education-degree i { margin-right: 8px; }
+    .degree-text { white-space: nowrap; }
+    .education-date { white-space: nowrap; }
+    .education-institution { margin-top: 0; /* Remove italic */ }
     .teaching-entry {
-      margin-bottom: 25px; /* Space between different jobs */
-      padding-bottom: 15px;
-      border-bottom: 1px dotted #ccc; /* Optional: separates jobs visually */
+      margin-bottom: 20px;
+      font-size: 1.15rem; /* Set consistent font size for teaching entries */
+      line-height: 1.3; /* Reduce line height for compactness */
     }
-    .teaching-entry:last-child { border-bottom: none; }
-
     .teaching-header {
       display: flex;
       justify-content: space-between;
       font-weight: bold;
-      font-size: 1.3rem;
-      margin-bottom: 2px; /* Very tight to the next line */
-      color: var(--link-color); /* Highlight the role */
+      margin-bottom: 2px; /* Tighten spacing after header */
     }
-
-    /* Compacting the inner lines */
-    .teaching-role, 
-    .teaching-course, 
+    .teaching-role {
+      font-style: italic;
+      margin-top: 0px; /* Reduced from 5px */
+      margin-bottom: 0px;
+    }
+    .teaching-course {
+      margin-top: 0px; /* Reduced from 5px */
+      margin-bottom: 0px;
+    }
     .teaching-evaluations {
-      margin: 0; /* REMOVES THE GAP */
-      padding: 0;
-      line-height: 1.4; /* Tighter line height for the block */
-      font-size: 1.15rem;
+      margin-top: 0px; /* Reduced from 5px */
+      font-size: 0.9rem;
     }
-    
-    .teaching-role { font-style: italic; color: var(--text-color); }
-    .teaching-course { font-weight: 500; }
-    .teaching-evaluations { font-size: 1rem; color: #666; margin-top: 4px; } /* Slightly smaller for eval links */
-
-    /* --- EDUCATION & SKILLS --- */
-    .interests-education { display: flex; gap: 40px; margin-top: 30px; }
-    .education, .skills { flex: 1; }
-    
-    .education-entry { margin-bottom: 15px; }
-    .education-degree { font-weight: bold; display: flex; justify-content: space-between; }
-    .education-institution { font-style: italic; margin-top: 0; }
-
-    /* --- REFERENCES --- */
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--section-bg); word-wrap: break-word; }
+    th { background: var(--section-bg); }
+    section { margin-top: 10px; padding-top: 10px; border-top: none; display: none; }
+    section.active { display: block; }
+    hr.subsection { border: 0; height: 1px; background-color: #ccc; margin-top: 10px; margin-bottom: 20px; } /* Moderated subsection line: Reduced height from 0.3em to 1px for thinner appearance; Changed color from var(--text-color) (which could be dark/white based on theme) to #ccc (light gray) for subtler, less prominent divider in both light/dark modes */
+    .indented { margin-left: 20px; }
+    strong { font-weight: bold; }
+    .skills ul { padding-left: 0; list-style-type: none; }
+    .skills li { text-indent: 0; margin-bottom: 5px; }
+    .award-entry { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.15rem; /* Set consistent font size for award entries */ }
+    .award-name { flex: 1; font-weight: bold; }
+    .award-date { text-align: right; white-space: nowrap; font-size: 1.15rem; color: var(--text-color); font-weight: bold; }
     .references-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive Grid */
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 20px; /* Space between columns */
       margin-top: 20px;
     }
     .reference {
-      background-color: rgba(0,0,0,0.03);
-      padding: 20px;
+      background-color: var(--section-bg); /* Optional background for visual separation */
+      padding: 15px;
       border-radius: 5px;
-      border: 1px solid #eee;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
     }
-    .reference p { margin: 2px 0; line-height: 1.4; }
-
-    /* --- MOBILE OPTIMIZATION --- */
+    .reference p {
+      margin: 5px 0; /* Spacing between lines in each reference */
+    }
+    .indented strong::after {
+      content: attr(data-label);
+      font-weight: normal; /* Unbold the colon */
+      margin-left: 5px; /* Space after the bold text */
+    }
+    @media (max-width: 900px) { .biography { flex-direction: column; align-items: center; } .interests-education { flex-direction: column; } .references-grid { grid-template-columns: 1fr; /* Stack on small screens */ } }
     @media (max-width: 768px) {
-      body {
-        padding: 0 20px; /* Reduce side padding on mobile */
-        font-size: 1.1rem; /* Slightly smaller text for mobile reading */
-      }
-      
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-top: 0;
-      }
-      
-      nav { margin-top: 15px; text-align: center; }
-      nav a { margin: 0 8px; font-size: 1rem; }
-
-      .biography { flex-direction: column; align-items: center; }
-      .bio-left { flex: auto; width: 100%; max-width: 350px; }
-      
-      .interests-education { flex-direction: column; gap: 20px; }
-      
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.75rem; }
-      
-      .teaching-header { font-size: 1.15rem; flex-direction: column; }
-      .teaching-header span:last-child { font-weight: normal; font-size: 1rem; }
+      body { font-size: 1rem; line-height: 1.4; }
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2.5rem; }
+      h3 { font-size: 1.75rem; }
+      h4 { font-size: 1.25rem; }
+      h5 { font-size: 1rem; }
+      h6 { font-size: 1rem; }
+      h7 { font-size: 1rem; }
+      h8 { font-size: 1rem; }
+      h9 { font-size: 1rem; }
+      h10 { font-size: 1rem; }
+      nav { font-size: 1rem; }
+      .social-icons a { font-size: 2.5rem; }
+      ul, li, a { font-size: 1rem; }
+      .abstract, .highlight, .passage, .education-entry, .teaching-entry, .award-entry { font-size: 1rem; }
+      .teaching-evaluations { font-size: 0.85rem; }
+      .profile-pic-wrapper { width: 250px; height: 350px; } /* Adjust profile pic for mobile */
     }
-
-    section { display: none; }
-    section.active { display: block; animation: fadeIn 0.5s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    
-    /* Print Styles */
     @media print {
-        nav, .toggle-btn, .social-icons { display: none; }
-        body { color: black; background: white; max-width: 100%; }
-        header::before { display: none; }
-        header { border-bottom: 2px solid black; color: black; justify-content: center; }
+      @page {
+        size: landscape;
+      }
     }
   </style>
 </head>
-<body data-theme="light"> 
-
+<body data-theme="light">
   <header>
     <h1>Anupam Ghosh</h1>
     <nav>
-      <a href="#home">Home</a> 
-      <a href="#research">Research</a> 
-      <a href="#teaching">Teaching</a> 
-      <a href="#awards">Awards</a> 
-      <a href="#contact">References</a>
+    <a href="#home">Home</a> | <a href="#research">Research</a> | <a href="#teaching">Teaching</a> | <a href="#awards">Awards</a> | <a href="#contact">References</a>
     </nav>
   </header>
-
   <section id="home" class="active">
     <div class="biography">
       <div class="bio-left">
@@ -240,115 +233,130 @@
           <img src="profile.png" alt="Anupam Ghosh">
         </div>
         <div class="social-icons">
-          <a href="mailto:aghosh4@huskers.unl.edu"><i class="fas fa-envelope"></i></a> 
+          <a href="mailto:aghosh4@huskers.unl.edu"><i class="fas fa-envelope"></i></a>
           <a href="https://www.linkedin.com/in/aghosh4/"><i class="fab fa-linkedin"></i></a>  
           <a href="https://github.com/Ghosh-Anupam"><i class="fab fa-github"></i></a>  
-          <a href="https://x.com/ghosh2397"><i class="fab fa-twitter"></i></a> 
+          <a href="https://x.com/ghosh2397"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
-      
       <div class="bio-right">
-        <p> 
-            <strong>Welcome!</strong> I am a sixth year PhD candidate in Economics at the University of Nebraska-Lincoln. My research utilizes applied econometric techniques to answer questions in areas of labor, public and environmental economics.
-        </p>
-        <p style="font-size: 1.3em; color: var(--link-color);">
-            <strong>I am on the 2025-2026 job market.</strong>
+        <div class="passage">
+          <h9>
+          <p>
+            <strong>Welcome!</strong> I am a sixth year PhD candidate in Economics at the University of Nebraska-Lincoln. My research utilizes applied econometric techniques, to answer questions in areas of labor, public and environmental economics.
         </p>
         <p>
-            My job market paper presents <strong>novel estimates</strong> of the short- (1-4 years after exposure) and long-term (5-10 years after exposure) effects of hurricanes on county-level crime rates. Using a multiple event study specification, I show that major hurricanes cause property crime rates to increase significantly for at least a decade following exposure, with effect sizes being unequally larger for less-prepared and poorer counties.
+            <strong>
+            I am on the 2025-2026 job market.
+            </strong>
         </p>
+        <p>
+            My job market paper, presents <strong>novel estimates</strong> of the short- (1-4 years after exposure) and long-term (5-10 years after exposure) effects of hurricanes on county-level crime rates.
+            Using a multiple event study specification, I show that major hurricanes cause property crime rates to increase significantly for at least a decade following exposure, with effect sizes being unequally larger for less-prepared and poorer counties.
+        </p>
+       
         <p>
             Besides academia, I love travelling, photography, and exploring new cuisines.
         </p>
-
-        <div style="margin-top: 25px;">
-            <span style="font-weight:bold; margin-right:10px;">Download My:</span> 
-            <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-JMP.pdf" class="pdf-link">Job Market Paper</a> | 
-            <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Academic_CV.pdf" class="pdf-link" download>Academic CV</a> | 
-            <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Industry%20Resume.pdf" class="pdf-link" download>Industry Resume</a> | 
-            <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Sample%20Syllabus.pdf" class="pdf-link" download>Teaching Syllabus</a>
+        </h9>
+          <p><h9>Download My: </h9> <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-JMP.pdf" class="pdf-link"><h8>Job Market Paper</h8></a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Academic_CV.pdf" class="pdf-link" download><h8>Academic CV</h8></a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Industry%20Resume.pdf" class="pdf-link" download><h8>Industry Resume</h8></a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Sample%20Syllabus.pdf" class="pdf-link" download><h8>Teaching Syllabus</h8></a></p>
+        </div>
+        <div class="interests-education">
+          <div class="education">
+            <h3>Education</h3>
+            <div class="education-entry">
+              <div class="education-degree"><span class="degree-text"><i class="fas fa-graduation-cap"></i> Ph.D. in Economics</span> <span class="education-date">2020 – 2026</span></div>
+              <div class="education-institution"><h7>University of Nebraska-Lincoln</h7></div>
+            </div>
+            <div class="education-entry">
+              <div class="education-degree"><span class="degree-text"><i class="fas fa-graduation-cap"></i> M.A in Economics</span> <span class="education-date">2018 – 2020</span></div>
+              <div class="education-institution"><h7>University of Arkansas-Fayetteville</h7></div>
+            </div>
+            <div class="education-entry">
+              <div class="education-degree"><span class="degree-text"><i class="fas fa-graduation-cap"></i> M.Sc in Economics</span> <span class="education-date">2014 – 2016</span></div>
+              <div class="education-institution"><h7>University of Calcutta, India</h7></div>
+            </div>
+            <div class="education-entry">
+              <div class="education-degree"><span class="degree-text"><i class="fas fa-graduation-cap"></i> B.Sc in Economics</span> <span class="education-date">2011 – 2014</span></div>
+              <div class="education-institution"><h7>St. Xavier’s College, Kolkata, India</h7></div>
+            </div>
+          </div>
+          <div class="skills">
+            <h3>Skills</h3>
+            <ul>
+              <li><h10><strong>Regression Methods:</strong> Cross-sectional analysis, Logistic regression, Discrete choice models, Time-series analysis (AR, MI, ARIMA, Co-integration).</h10></li>
+              <li><h10><strong>Machine Learning:</strong> Classification, Regularization, Decision Trees, Support Vector Machine, Unsupervised learning.</h10></li>
+              <li><h10><strong>Causal Inference:</strong> A/B testing, Panel fixed effects, Difference-in-Differences, Matching, Instrumental Variables, Regression Discontinuity.</h10></li>
+              <li><h10><strong>Programming:</strong> Python (Pandas, Numpy, Matplotlib, Sci-kit-Learn), SQL, R, STATA, Matlab, Z-Tree, and LATEX.</h10></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="interests-education">
-        <div class="education">
-          <h3>Education</h3>
-          <div class="education-entry">
-            <div class="education-degree"><span><i class="fas fa-graduation-cap"></i> Ph.D. in Economics</span> <span>2020 – 2026</span></div>
-            <div class="education-institution">University of Nebraska-Lincoln</div>
-          </div>
-          <div class="education-entry">
-            <div class="education-degree"><span><i class="fas fa-graduation-cap"></i> M.A in Economics</span> <span>2018 – 2020</span></div>
-            <div class="education-institution">University of Arkansas-Fayetteville</div>
-          </div>
-          <div class="education-entry">
-            <div class="education-degree"><span><i class="fas fa-graduation-cap"></i> M.Sc in Economics</span> <span>2014 – 2016</span></div>
-            <div class="education-institution">University of Calcutta, India</div>
-          </div>
-          <div class="education-entry">
-            <div class="education-degree"><span><i class="fas fa-graduation-cap"></i> B.Sc in Economics</span> <span>2011 – 2014</span></div>
-            <div class="education-institution">St. Xavier’s College, Kolkata, India</div>
-          </div>
-        </div>
-
-        <div class="skills">
-          <h3>Skills</h3>
-          <ul>
-            <li><strong>Regression Methods:</strong> Cross-sectional analysis, Logistic regression, Discrete choice models, Time-series analysis (AR, MI, ARIMA, Co-integration).</li>
-            <li><strong>Machine Learning:</strong> Classification, Regularization, Decision Trees, Support Vector Machine, Unsupervised learning.</li>
-            <li><strong>Causal Inference:</strong> A/B testing, Panel fixed effects, Difference-in-Differences, Matching, Instrumental Variables, Regression Discontinuity.</li>
-            <li><strong>Programming:</strong> Python (Pandas, Numpy, Matplotlib, Sci-kit-Learn), SQL, R, STATA, Matlab, Z-Tree, and LaTeX.</li>
-          </ul>
-        </div>
-    </div>
   </section>
-
   <section id="research">
     <h3>Research Fields</h3>
-    <p style="margin-left: 20px;">
-        <strong>Primary:</strong> Public and Environmental Economics<br>
-        <strong>Secondary:</strong> Labor and Development Economics
-    </p>
-    
+    <h5><p class="indented"><strong>Primary:</strong> Public and Environmental Economics<br><strong>Secondary:</strong> Labor and Development Economics</p></h5>
+    <hr class="subsection">
     <h3>Job Market Paper</h3>
     <h4>Do Storms Bring Crime? Evidence from US Counties</h4>
-    
-    <div class="highlight-box">
-     <strong>Abstract:</strong> Little causal evidence exists regarding the long-term impacts of natural disasters on crime. Using a balanced panel of county-level crime data spanning 1980–2020, this paper estimates the short- and long-term effects of hurricanes of varying intensities affecting U.S. counties between 1990 and 2010. Findings reveal that, while minor hurricanes produce marginal effects on crime, major hurricanes cause significant increases in incidents of property crime... (Abstract Truncated for brevity in code view, content remains same).
-    </div>   
-    <p><a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-JMP.pdf" class="pdf-link" download>Paper</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-JMP_Presentation.pdf" class="pdf-link" download>Slides</a></p>
-    
+    <div class="abstract">
+     <div class="abs-intro"> Abstract: </div> Little causal evidence exists regarding the long-term impacts of natural disasters on crime. Using a balanced panel of county-level crime data spanning 1980–2020, this paper estimates the short- and long-term effects of hurricanes of varying intensities affecting U.S. counties between 1990 and 2010. Findings reveal that, while minor hurricanes produce marginal effects on crime, major hurricanes cause significant increases in incidents of property crime. In the decade following exposure to major hurricanes, property crime rates increase by 8.5% relative to the baseline mean, thereby imposing an estimated per-capita social cost of $120 on treated counties. This unequal impact of stronger hurricanes is largely driven by evacuation orders and selective out-migration in the short term, and by declining per-capita incomes in the long term. I also find that hurricane effects are disproportionately larger for less-prepared and poorer counties, which, on average, risk losing 1.4% and 2.2% of per-capita GDP, respectively, due to hurricane-induced crimes. Heterogeneity analysis reveals that, while post-hurricane crime increases are greater in areas with smaller minority populations, arrest rates for minorities far exceed those for white individuals. Overall, the findings underline the need for greater resource allocation toward vulnerable communities and increased investment in disaster resilience measures to mitigate the economic and social consequences of climate change.
+    </div>  
+    <p><a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-JMP.pdf" class="pdf-link" download><h8>Paper</h8></a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-JMP_Presentation.pdf" class="pdf-link" download><h8>Slides</h8></a></p>
+    <hr class="subsection">
     <h3>Work In Progress</h3>
     <h4>Mandatory Evacuation Orders: A Path to Crime?</h4>
-    <ul>
+    <ul><h9>
       <li>Analyze how evacuation orders influence crime in the immediate aftermath of hurricanes.</li>
       <li>Compare crime effects under mandatory vs. voluntary evacuation orders.</li>
+      </h9>
     </ul>
-
     <h4>Hurricanes, Migration and Crime</h4>
-    <ul>
+    <ul><h9>
       <li>Examine the effect of hurricanes on migration flows by utilizing the IRS’s migration flow data.</li>
       <li>Provide new evidence on the effect of hurricane-induced migrants on the crime landscape of receiving counties.</li>
-    </ul>
-
+    </h9></ul>
     <h4>Gender of the Firstborn and Maternal Victimization</h4>
-    <ul>
+    <ul><h9>
       <li>Using DHS data from India, I explore the role of the sex of the firstborn child on mother’s domestic violence experience.</li>
       <li>To explore possible mechanisms, I also look at father’s reported gender attitude.</li>
-    </ul>
-    
-    <h3>Presentations & Conferences</h3>
-    <ul>
-        <li><strong>2025:</strong> Midwest Applied Microeconomics Workshop (University of Missouri); Causal Inference Workshop (Arnold Ventures)</li>
-        <li><strong>2024:</strong> Half Baked Seminar (University of Nebraska-Lincoln); Nebraska Labor Summit</li>
-        <li><strong>2019:</strong> Economics Departmental Seminar (University of Arkansas-Fayetteville)</li>
-        <li><strong>2016-2017:</strong> Observer Research Foundation Seminars</li>
-    </ul>
+    </h9></ul>
+    <hr class="subsection">
+    <h3>Presentations</h3>
+    <div class="award-entry">
+      <div class="award-name"><strong>Midwest Applied Microeconomics Workshop</strong>, <h7>University of Missouri</h7></div>
+      <div class="award-date"><strong>2025</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Half Baked Seminar</strong>, <h7>University of Nebraska-Lincoln</h7></div>
+      <div class="award-date"><strong>2024</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Economics Departmental Seminar</strong>, <h7>University of Arkansas-Fayetteville</h7></div>
+      <div class="award-date"><strong>2019</strong></div>
+    </div>
+    <hr class="subsection">
+    <h3>Conferences & Workshops</h3>
+    <div class="award-entry">
+      <div class="award-name"><strong>Causal Inference Workshop</strong>, <h7>Arnold Ventures</h7></div>
+      <div class="award-date"><strong>2025</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Nebraska Labor Summit</strong>, <h7>University of Nebraska-Lincoln</h7></div>
+      <div class="award-date"><strong>2022-2024</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Ganga Padma Devising Seminar</strong>, <h7>Observer Research Foundation</h7></div>
+      <div class="award-date"><strong>2017</strong></div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name"><strong>Sustainable Development in Sunderban</strong>, <h7>Observer Research Foundation</h7></div>
+      <div class="award-date"><strong>2016</strong></div>
+    </div>
+    <hr class="subsection">
   </section>
-
-  <section id="teaching">
-    
+<section id="teaching">
     <div class="teaching-entry">
       <div class="teaching-header">
         <span>Instructor of Record</span>
@@ -356,15 +364,10 @@
       </div>
       <div class="teaching-role">University of Nebraska-Lincoln</div>
       <div class="teaching-course">Principles of Macroeconomics</div>
-      <div class="teaching-evaluations">
-        Certification: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Teaching_Certification.pdf" download>PhD Teaching Certificate</a> <br>
-        Evaluations: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Summer%202022.pdf" download>Summer 2022</a> | 
-        <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Fall%202022.pdf" download>Fall 2022</a> | 
-        <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Summer%202023.pdf" download>Summer 2023</a> | 
-        <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Spring%202024.pdf" download>Spring 2024</a>
-      </div>
+      <div class="teaching-evaluations">Certification: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-Teaching_Certification.pdf" download>PhD Teaching Certificate</a> </div>
+      <div class="teaching-evaluations">Evaluations: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Summer%202022.pdf" download>Summer 2022</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Fall%202022.pdf" download>Fall 2022</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Summer%202023.pdf" download>Summer 2023</a> |
+      <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-211-Spring%202024.pdf" download>Spring 2024</a> </div>
     </div>
-
     <div class="teaching-entry">
       <div class="teaching-header">
         <span>Teaching Assistant</span>
@@ -373,7 +376,6 @@
       <div class="teaching-role">University of Nebraska-Lincoln</div>
       <div class="teaching-course">Principles of Microeconomics & Intermediate Microeconomics</div>
     </div>
-
     <div class="teaching-entry">
       <div class="teaching-header">
         <span>Instructor of Record</span>
@@ -381,12 +383,8 @@
       </div>
       <div class="teaching-role">University of Arkansas-Fayetteville</div>
       <div class="teaching-course">Essentials of Economics</div>
-      <div class="teaching-evaluations">
-        Evaluations: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-2143-Fall-2019.pdf" download>Fall 2019</a> | 
-        <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-2143-Spring-2020.pdf" download>Spring 2020</a>
-      </div>
+      <div class="teaching-evaluations">Evaluations: <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-2143-Fall-2019.pdf" download>Fall 2019</a> | <a href="https://github.com/Ghosh-Anupam/Ghosh-Anupam.github.io/raw/main/Anupam_Ghosh-ECON-2143-Spring-2020.pdf" download>Spring 2020</a></div>
     </div>
-
     <div class="teaching-entry">
       <div class="teaching-header">
         <span>Guest Lecturer</span>
@@ -395,42 +393,43 @@
       <div class="teaching-role">Asutosh College, Kolkata, India</div>
       <div class="teaching-course">Micro and Macro Economics, Statistics, & Indian Economic History</div>
     </div>
-
   </section>
-
   <section id="awards">
-    <div class="teaching-entry">
-        <div class="teaching-header"><span>Workshop Travel Grant ($914)</span> <span>2025</span></div>
-        <div class="teaching-role">Arnold Ventures</div>
+    <div class="award-entry">
+      <div class="award-name">Workshop Travel Grant, <h7>Arnold Ventures</h7> <h9>($914)</h9></div>
+      <div class="award-date">2025</div>
     </div>
-    <div class="teaching-entry">
-        <div class="teaching-header"><span>PhD Teaching Certificate ($300)</span> <span>2024</span></div>
-        <div class="teaching-role">University of Nebraska-Lincoln</div>
+    <div class="award-entry">
+      <div class="award-name">PhD Teaching Certificate, <h7>University of Nebraska-Lincoln</h7> <h9>($300)</h9></div>
+      <div class="award-date">2024</div>
     </div>
-    <div class="teaching-entry">
-        <div class="teaching-header"><span>McConnell Dissertation Fellowship ($8,000)</span> <span>2024 - 2025</span></div>
-        <div class="teaching-role">University of Nebraska-Lincoln</div>
+    <div class="award-entry">
+      <div class="award-name">McConnell Dissertation Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($8,000)</h9></div>
+      <div class="award-date">2024 - 2025</div>
     </div>
-    <div class="teaching-entry">
-        <div class="teaching-header"><span>Robert C. and Patricia N. Bingham Teaching Fellowship ($3,000)</span> <span>2023 - 2024</span></div>
-        <div class="teaching-role">University of Nebraska-Lincoln</div>
+    <div class="award-entry">
+      <div class="award-name">Robert C. and Patricia N. Bingham Teaching Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($3,000)</h9></div>
+      <div class="award-date">2023 - 2024</div>
     </div>
-    <div class="teaching-entry">
-        <div class="teaching-header"><span>Ogle Fellowship ($5,500)</span> <span>2022 - 2024</span></div>
-        <div class="teaching-role">University of Nebraska-Lincoln</div>
+    <div class="award-entry">
+      <div class="award-name">Ogle Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($5,500)</h9></div>
+      <div class="award-date">2022 - 2024</div>
     </div>
-    <div class="teaching-entry">
-        <div class="teaching-header"><span>Doctoral Academic Fellowship ($24,000)</span> <span>2018 - 2020</span></div>
-        <div class="teaching-role">University of Arkansas</div>
+    <div class="award-entry">
+      <div class="award-name">Othmer Fellowship, <h7>University of Nebraska-Lincoln</h7> <h9>($8,000)</h9></div>
+      <div class="award-date">2020 - 2022</div>
+    </div>
+    <div class="award-entry">
+      <div class="award-name">Doctoral Academic Fellowship, <h7>University of Arkansas</h7> <h9>($24,000)</h9></div>
+      <div class="award-date">2018 - 2020</div>
     </div>
   </section>
-
   <section id="contact">
-    <h3>References</h3>
     <div class="references-grid">
       <div class="reference">
-        <p><strong>Dr. Daniel Tannenbaum (Chair)</strong></p>         
-        <p>Georgia and Jim Thompson Associate Professor</p>
+        <p><strong>Dr. Daniel Tannenbaum (Chair)</strong></p>        
+        <p>Georgia and Jim Thompson</p>
+        <p>Associate Professor</p>
         <p>Department of Economics</p>
         <p>University of Nebraska-Lincoln</p>
         <p><a href="mailto:dtannenbaum@unl.edu">dtannenbaum@unl.edu</a></p>      
@@ -440,7 +439,7 @@
         <p>Assistant Professor</p>
         <p>Department of Economics</p>
         <p>University of Nebraska-Lincoln</p>
-        <p><a href="mailto:btimpe@unl.edu">btimpe@unl.edu</a></p>      
+      <p><a href="mailto:btimpe@unl.edu">btimpe@unl.edu</a></p>      
       </div>
       <div class="reference">
         <p><strong>Dr. Yifan Gong</strong></p>
@@ -448,14 +447,11 @@
         <p>Department of Economics</p>
         <p>University of Nebraska-Lincoln</p>
         <p><a href="mailto:ygong5@unl.edu">ygong5@unl.edu</a></p>      
-      </div>
     </div>
   </section>
-
   <footer>
-    <p>Click here to switch themes <button class="toggle-btn" onclick="toggleTheme()">☀️</button></p>
+    <p>Click here to switch themes<button class="toggle-btn" onclick="toggleTheme()">☀️</button></p>
   </footer>
-
   <script>
     function toggleTheme() {
       const body = document.body;
@@ -464,22 +460,17 @@
       body.setAttribute('data-theme', newTheme);
       document.querySelector('.toggle-btn').innerHTML = newTheme === 'light' ? '🌙' : '☀️';
     }
-
     const sections = document.querySelectorAll('section');
     function showSection(hash) {
       sections.forEach(sec => sec.classList.remove('active'));
       const target = document.querySelector(hash || '#home');
       if (target) {
         target.classList.add('active');
-        // Scroll to top when switching tabs
-        window.scrollTo(0,0);
       }
     }
-    
     window.addEventListener('hashchange', () => {
       showSection(location.hash);
     });
-    
     document.addEventListener('DOMContentLoaded', () => {
       showSection(location.hash);
     });
