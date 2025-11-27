@@ -41,6 +41,11 @@
       transition: all 0.3s ease; 
       font-size: 1.15rem; 
       -webkit-font-smoothing: antialiased;
+      
+      /* STICKY FOOTER SETUP */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* --- JUSTIFY TEXT FIX --- */
@@ -64,11 +69,14 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    /* --- INCREASED WIDTH FIX --- */
+    /* --- MAIN CONTAINER FLEX GROW --- */
     .main-container {
-        max-width: 1450px; /* Increased from 1200px to fit the Download line */
+        max-width: 1450px; 
         margin: 0 auto;
         padding: 20px 20px;
+        flex: 1; /* Pushes footer to the bottom */
+        width: 100%; /* Ensures full width within max-width */
+        box-sizing: border-box;
     }
 
     nav { background: none; padding: 0; text-align: right; font-size: 1rem; }
@@ -106,7 +114,7 @@
     h8 { font-size: 1.15em; font-weight: normal; text-decoration: underline; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     h9 { font-size: 1.15em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     h10 { font-size: 1.25em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
-    /* Utility Spans to replace H tags for better inline control */
+    
     .text-bold { font-weight: bold; }
     .text-italic { font-style: italic; }
     .text-small { font-size: 0.95em; }
@@ -131,7 +139,7 @@
         font-size: 1.15em; 
     }
     
-    /* TILE LINK STYLING (Used for Downloads and Teaching) */
+    /* TILE LINK STYLING */
     .pdf-link { 
         background: var(--section-bg); 
         padding: 4px 10px; 
@@ -149,13 +157,33 @@
         text-decoration: none;
         color: #000;
     }
-    /* Dark mode hover adjustment */
     [data-theme="dark"] .pdf-link:hover {
         background-color: #2d3748; 
         color: #fff;
     }
     
-    footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: var(--text-color); border-top: 1px solid var(--section-bg); padding-top: 20px; }
+    /* FOOTER CENTER FIX */
+    footer { 
+        text-align: center; 
+        margin-top: 50px; 
+        font-size: 0.9em; 
+        color: var(--text-color); 
+        border-top: 1px solid var(--section-bg); 
+        padding-top: 20px;
+        padding-bottom: 30px; /* Added bottom padding so it's not on the edge */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    footer p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        text-align: center;
+    }
+
     section { display: none; }
     section.active { display: block; animation: fadeIn 0.5s; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -205,12 +233,11 @@
       line-height: 1.3;
       font-weight: 500;
     }
-    /* --- COLOR FIX FOR TEACHING LABELS --- */
     .teaching-evaluations {
       margin-top: 5px;
       font-size: 0.95em;
-      line-height: 1.8; /* Increased line height for tiles */
-      color: var(--text-color); /* Forces "Evaluations:" to be text color */
+      line-height: 1.8; 
+      color: var(--text-color); 
     }
 
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -222,7 +249,6 @@
     .award-entry { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.1em; align-items: baseline;}
     .award-name { flex: 1; margin-right: 10px;}
     .award-date { text-align: right; white-space: nowrap; font-weight: bold; }
-    /* Fix for award amount staying on same line */
     .award-amount { font-weight: normal; font-size: 0.95em; color: var(--text-color); display: inline; }
 
     /* REFERENCES GRID */
