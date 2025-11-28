@@ -122,8 +122,19 @@ header::before {
     li { margin-bottom: 10px; text-indent: 0; font-size: 1.1.25em; }
     a { color: var(--link-color); text-decoration: none; font-size: 1.1.25em; }
     a:hover { text-decoration: underline; }
-    .abs-intro { font-style: normal; margin: 0px 0; background: var(--section-bg); padding: 0px; border-radius: 0px; color: var(--highlight-color); margin-left: 0px; font-size: 1.15em; }
-    .abstract { font-style: italic; margin: 10px 0; background: var(--section-bg); padding: 10px; border-radius: 5px; color: var(--text-color); margin-left: 20px; font-size: 1.25em; }
+        /* ABSTRACT BOX */
+    .abs-intro { font-style: normal; color: var(--highlight-color); 
+      font-size: 1.15em; font-weight: bold;}
+    .abstract { 
+        font-style: italic; 
+        margin: 10px 0; 
+        background: var(--section-bg); 
+        padding: 10px; 
+        border-radius: 5px; 
+        color: var(--text-color); 
+        border-left: 4px solid var(--link-color); 
+        font-size: 1.25em; 
+    }
     .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.25em; }
     .pdf-link { background: var(--section-bg); padding: 5px 10px; border-radius: 5px; display: inline-block; margin: 5px; color: var(--text-color); margin-left: 20px; }
     footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: var(--text-color); border-top: 1px solid var(--section-bg); padding-top: 20px; }
@@ -146,25 +157,37 @@ header::before {
     .degree-text { white-space: nowrap; }
     .education-date { white-space: nowrap; }
     .education-institution { margin-top: 0; /* Remove italic */ }
+    /* TEACHING SECTION */
     .teaching-entry {
       margin-bottom: 20px;
-      font-size: 1.15em; /* Set consistent font size for teaching entries */
+      font-size: 1.1em;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee; 
     }
     .teaching-header {
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+      font-size: 1.05em;
+      margin-bottom: 2px; 
     }
     .teaching-role {
       font-style: italic;
-      margin-top: 5px;
+      margin-top: 0px; 
+      margin-bottom: 2px;
+      line-height: 1.3;
     }
     .teaching-course {
-      margin-top: 5px;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      line-height: 1.3;
+      font-weight: 500;
     }
     .teaching-evaluations {
       margin-top: 5px;
-      font-size: 0.9em;
+      font-size: 0.95em;
+      line-height: 1.8; 
+      color: var(--text-color); 
     }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--section-bg); word-wrap: break-word; }
