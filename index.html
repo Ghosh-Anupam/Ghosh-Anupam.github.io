@@ -31,7 +31,12 @@
       --highlight-color: #480607 ;
     }
     body { font-family: Garamond, serif; max-width: 1600px; margin: 0 auto; padding: 5px; line-height: 1.6; color: var(--text-color); 
-      font-size: 1.25em; background-color: var(--bg-color); transition: all 0.3s ease; }
+      font-size: 1.25em; background-color: var(--bg-color); transition: all 0.3s ease; 
+     /* STICKY FOOTER SETUP */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
         /* --- JUSTIFY TEXT FIX --- */
     p, .passage, .abstract, li {
         text-align: justify;
