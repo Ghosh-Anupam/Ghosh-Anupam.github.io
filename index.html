@@ -292,14 +292,85 @@
       font-weight: normal; 
       margin-left: 5px; 
     }
+
+    /* ANNOTATED CHANGES FOR SMALLER SCREEN FRIENDLINESS */
+    /* 
+    To make your job market website more mobile-friendly (inspired by clean, responsive academic sites like the example you mentioned), 
+    we're enhancing the existing @media query. Key goals: 
+    - Prevent horizontal scrolling by constraining widths and removing negative margins on small screens.
+    - Stack elements vertically for better readability (e.g., header, bio sections).
+    - Scale down fonts and images proportionally without losing elegance.
+    - Adjust gaps and paddings to fit narrow viewports (e.g., phones under 600px).
+    - Add a new breakpoint for very small screens (<600px) to handle ultra-narrow devices.
+    These changes build on your current code—test on a phone or browser dev tools (F12 > toggle device toolbar).
+    */
+
     @media (max-width: 900px) { 
         .biography { flex-direction: column; align-items: center; } 
         .interests-education { flex-direction: column; } 
         .references-grid { grid-template-columns: 1fr; } 
         h1 { font-size: 2em; text-align: center; margin-bottom: 10px;}
-        header { flex-direction: column; }
-        nav { text-align: center; margin-top: 10px; }
+        header { 
+          flex-direction: column; 
+          /* ANNOTATION: Stack header vertically to avoid squeezing nav links; reduces width pressure. */
+          margin-left: 0; /* ANNOTATION: Remove negative left/right margins to prevent full-bleed extension on mobile. */
+          margin-right: 0;
+          padding: 10px; /* ANNOTATION: Tighten padding for more breathing room without wasting space. */
+        }
+        nav { 
+          text-align: center; 
+          margin-top: 10px; 
+          font-size: 1.1rem; /* ANNOTATION: Shrink nav font to fit more links without wrapping awkwardly. */
+        }
+        nav a { 
+          margin: 0 8px; /* ANNOTATION: Halve margins between links to compress horizontal space. */
+          display: inline-block; /* ANNOTATION: Ensures links wrap cleanly if needed, but at this size they should fit in one line. */
+        }
+        body { 
+          padding: 10px; /* ANNOTATION: Increase body padding slightly on sides for touch-friendly edges, but keep it minimal. */
+          font-size: 1.1em; /* ANNOTATION: Reduce base font size to prevent text overflow in paragraphs/lists. */
+        }
+        /* ANNOTATION: Target long sections like abstracts and skills lists to wrap text better. */
+        .abstract, .passage, ul { 
+          font-size: 1.1em; 
+          padding-left: 20px; /* ANNOTATION: Halve ul padding-left for indented lists on narrow screens. */
+        }
     }
+
+    /* NEW: Additional breakpoint for very small screens (e.g., phones <600px) */
+    @media (max-width: 600px) { 
+      /* ANNOTATION: This handles portrait phones where 900px query isn't enough—focus on ultra-compact layout. */
+      .profile-pic-wrapper { 
+        width: 100%; /* ANNOTATION: Make profile pic full-width (responsive) instead of fixed 350px, which would cause scrolling. */
+        max-width: 280px; /* ANNOTATION: Cap at a smaller max to avoid dominating tiny screens. */
+        height: auto; /* ANNOTATION: Let height flow naturally with width for better aspect ratio on mobile. */
+        aspect-ratio: auto; /* ANNOTATION: Disable fixed ratio; let image dictate for flexibility. */
+      }
+      h1 { font-size: 1.75em; } /* ANNOTATION: Further reduce h1 for pocket-sized devices. */
+      h3, h4 { 
+        font-size: 1.5em; 
+        margin-left: 0; /* ANNOTATION: Remove left margins on headings to center-align content fully. */
+        text-align: center; 
+      }
+      .biography, .interests-education { gap: 20px; } /* ANNOTATION: Halve gaps in flex containers to stack tighter. */
+      .award-entry, .education-degree, .teaching-header { 
+        flex-direction: column; /* ANNOTATION: Stack name/date pairs vertically to avoid cramping. */
+        align-items: flex-start; 
+        text-align: left; 
+      }
+      .award-date, .education-date { 
+        text-align: left; 
+        margin-top: 5px; /* ANNOTATION: No more right-align; treat as subtitle. */
+      }
+      .social-icons a { font-size: 2em; } /* ANNOTATION: Shrink icons to prevent overflow in bio-left. */
+      .pdf-link { 
+        display: block; /* ANNOTATION: Stack download links vertically for easier tapping. */
+        margin: 5px 0; 
+        text-align: center; 
+      }
+      footer { padding: 10px; } /* ANNOTATION: Compact footer to save vertical space. */
+    }
+
     @media print {
       @page {
         size: landscape;
@@ -419,7 +490,7 @@
     <ul><h9>
       <li>Using DHS data from India, I explore the role of the sex of the firstborn child on mother’s domestic violence experience.</li>
       <li>To explore possible mechanisms, I also look at father’s reported gender attitude.</li>
-    </h9></ul>
+      </h9></ul>
     <hr class="subsection">
     <h3>Presentations</h3>
     <div class="award-entry">
