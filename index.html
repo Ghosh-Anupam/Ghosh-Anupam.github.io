@@ -6,32 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anupam Ghosh</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+  <style>
     :root {
-      --bg-color: #16191b; /* Dark gray bg  */
-      --text-color: #FFFFF0 ; /* White text  */
-      --nav-bg: #16191b; /* Silver nav  */
-      --nav-text: #FFFFF0 ; /* White nav text on navy for contrast */
+      --bg-color: #16191b; 
+      --text-color: #FFFFF0 ; 
+      --nav-bg: #16191b; 
+      --nav-text: #FFFFF0 ; 
       --header-border: #16191b;
       --section-bg: #16191b;
-      --highlight-bg: #63b3ed; /* Blue for Job Market Paper highlight */
+      --highlight-bg: #63b3ed; 
       --link-color: #4299e1;
       --highlight-color: #F7E7CE ;
     }
     [data-theme="light"] {
-      --bg-color:   #FFFFF0 ; /* White bg light */
+      --bg-color:   #FFFFF0 ; 
       --text-color: #3B444B;
-      --nav-bg: #002147; /* Navy nav light */
-      --nav-text: #FFFFF0 ; /* White nav text on navy for contrast */
+      --nav-bg: #002147; 
+      --nav-text: #FFFFF0 ; 
       --header-border: #002147;
       --section-bg: #FFFFF0;
       --highlight-bg: #FFFFF0;
       --link-color: #014083;
       --highlight-color: #480607 ;
     }
+    
+    /* GLOBAL LAYOUT FIXES */
     body { 
         font-family: Garamond, serif; 
-        max-width: 1600px; 
+        max-width: 1500px; 
         margin: 0 auto; 
         padding: 5px; 
         line-height: 1.6; 
@@ -39,16 +42,20 @@
         font-size: 1.25em; 
         background-color: var(--bg-color); 
         transition: all 0.3s ease; 
-        /* STICKY FOOTER & MOBILE SCROLL FIX */
+        
+        /* STICKY FOOTER LOGIC */
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
-        overflow-x: hidden; /* Prevents horizontal scroll on small screens */
+        min-height: 100vh; /* Forces body to take full height of screen */
+        
+        /* MOBILE SCROLL PREVENTION */
+        overflow-x: hidden; 
     }
-        /* --- JUSTIFY TEXT FIX --- */
+
     p, .passage, .abstract, li {
         text-align: justify;
     }
+
     header { 
       display: flex; 
       justify-content: space-between; 
@@ -61,7 +68,7 @@
       margin-top: -20px;
       margin-left: -20px;
       margin-right: -20px;
-      flex-wrap: wrap; /* Helps responsive wrapping */
+      flex-wrap: wrap; /* Allows wrapping on small screens */
     }
     header::before { 
       content: ''; 
@@ -73,12 +80,13 @@
       background: var(--nav-bg); 
       z-index: -1; 
     }
+
     nav { 
         background: none; 
         padding: 0; 
         text-align: right; 
         font-size: 1.35rem; 
-        flex-wrap: wrap; /* Allows links to wrap on medium screens */
+        flex-wrap: wrap; /* Fix for mobile nav overflow */
     }
     nav a { 
         margin: 0 15px; 
@@ -91,16 +99,14 @@
     
     .toggle-btn { background: none; border: none; font-size: 1.5em; cursor: pointer; color: orange; margin-left: 10px;}
     
-    img {
-        border-radius: 8px; 
-    }
-    
-    /* --- MOBILE IMAGE FIX --- */
+    img { border-radius: 8px; }
+
+    /* RESPONSIVE IMAGE FIX */
     .profile-pic-wrapper {
-      width: 100%;               /* Fluid width for mobile */
-      max-width: 350px;           /* Max limit for desktop */
-      height: auto;               /* Auto height to maintain aspect ratio */
-      aspect-ratio: 5/6;          /* Enforce aspect ratio */
+      width: 100%;                /* Be flexible on mobile */
+      max-width: 350px;           /* Strict limit for desktop */
+      height: auto;               /* Auto height */
+      aspect-ratio: 5/6;          
       overflow: hidden;           
       margin: 0 auto;             
       border: 0px solid var(--header-border);
@@ -112,7 +118,7 @@
       object-fit: cover;          
       object-position: center;
     }
-    
+
     h1 { font-size: 3em; margin: 0; color: var(--nav-text); font-weight: bold; text-align: left; } 
     h2 { font-size: 3em; color: var(--text-color); border-bottom: 1px solid var(--section-bg); padding-bottom: 5px; margin-top: 20px; text-align: center; margin-bottom: 20px; }
     h3 { font-size: 2em; color: var(--text-color); margin-top: 20px; text-align: left; }
@@ -124,28 +130,19 @@
     h9 { font-size: 1.15em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     h10 { font-size: 1.25em; font-weight: normal; color: var(--text-color); margin-top: 0px; text-align: left; margin-bottom: 0px; margin-left: 0px; }
     
-    h3 + h4 {
-      margin-top: 5px;  
-    }
-    h3 {
-      margin-bottom: 5px; 
-    }
-    .skills h3 {
-      margin-bottom: 0;  
-    }
-    .skills ul {
-      margin-top: 0;  
-    }    
+    h3 + h4 { margin-top: 5px; }
+    h3 { margin-bottom: 5px; }
+    .skills h3 { margin-bottom: 0; }
+    .skills ul { margin-top: 0; }    
     p { margin:2px; padding:2px; }
-    div { margin:2px; padding:2px; }
+    div{ margin:2px; padding:2px; }
     
     ul { list-style-type: disc; padding-left: 40px; color: var(--text-color); margin-top: 5px; font-size: 1.1.25em; }
     li { margin-bottom: 10px; text-indent: 0; font-size: 1.1.25em; }
     a { color: var(--link-color); text-decoration: none; font-size: 1.1.25em; }
     a:hover { text-decoration: underline; }
-        
-    .abs-intro { font-style: normal; color: var(--highlight-color); 
-      font-size: 1.15em; font-weight: bold;}
+    
+    .abs-intro { font-style: normal; color: var(--highlight-color); font-size: 1.15em; font-weight: bold;}
     .abstract { 
         font-style: italic; 
         margin: 10px 0; 
@@ -157,7 +154,7 @@
         font-size: 1.25em; 
     }
     .highlight { background: var(--highlight-bg); padding: 15px; border-radius: 5px; margin: 10px 0; color: #2d3748; margin-left: 20px; font-size: 1.25em; }
-        
+    
     .pdf-link { 
         background: var(--section-bg); 
         padding: 4px 10px; 
@@ -179,24 +176,33 @@
         background-color: #2d3748; 
         color: #fff;
     }
-    
-    /* --- FOOTER CENTERING FIX --- */
+
+    /* FOOTER STYLING */
     footer { 
         text-align: center; 
-        margin-top: auto; /* Pushes to bottom */
+        margin-top: auto; /* This pushes the footer to the bottom */
         font-size: 0.8em; 
         color: var(--text-color); 
         border-top: 1px solid var(--section-bg); 
-        padding: 20px;
-        display: flex; /* Enables Flexbox */
-        justify-content: center; /* Horizontally centers content */
-        align-items: center; /* Vertically centers content */
-        gap: 10px; /* Space between text and button */
+        padding: 20px; 
+        
+        /* Centering Logic */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
+    footer p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
     section { margin-top: 10px; padding-top: 10px; border-top: none; display: none; }
-    section.active { display: block; }
-    
+    section.active { display: block; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
     .biography { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 20px; margin-top: 0; }
     .bio-left { text-align: center; }
     .bio-right { text-align: left; flex: 3; }
@@ -260,10 +266,11 @@
     .award-entry { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.15em; }
     .award-name { flex: 1; font-weight: bold; }
     .award-date { text-align: right; white-space: nowrap; font-size: 1.15em; color: var(--text-color); font-weight: bold; }
+    
     .references-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
-      gap: 20px; /* Space between columns */
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
       margin-top: 20px;
     }
     .reference {
@@ -283,10 +290,10 @@
     @media (max-width: 900px) { 
         .biography { flex-direction: column; align-items: center; } 
         .interests-education { flex-direction: column; } 
-        .references-grid { grid-template-columns: 1fr; /* Stack on small screens */ } 
-        h1 { font-size: 2em; text-align: center;} /* Adjust header for mobile */
-        nav { text-align: center; width: 100%; margin-top: 10px;}
-        header { flex-direction: column;}
+        .references-grid { grid-template-columns: 1fr; } 
+        h1 { font-size: 2em; text-align: center; margin-bottom: 10px;}
+        header { flex-direction: column; }
+        nav { text-align: center; margin-top: 10px; }
     }
     @media print {
       @page {
